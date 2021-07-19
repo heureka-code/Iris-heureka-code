@@ -13,6 +13,6 @@ setuptools.setup(
     license="MIT",
     description="Eventbasierte Kommunikation",
     url="https://github.com/heureka-code/Iris-heureka-code",
-    download_url="https://github.com/heureka-code/Iris-heureka-code/archive/refs/tags/0.0.1.tar.gz",
+    download_url="https://github.com/heureka-code/Iris-heureka-code/archive/refs/tags/0.0.2.tar.gz",
     packages=setuptools.find_packages()
     )
