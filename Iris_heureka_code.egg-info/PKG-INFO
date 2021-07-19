@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: Iris-heureka-code
-Version: 0.0.1
+Version: 0.0.2
 Summary: Eventbasierte Kommunikation
 Home-page: https://github.com/heureka-code/Iris-heureka-code
 Author: heureka-code
@@ -25,7 +25,7 @@ Description: # Iris - Verwaltung von Events
         ```__iadd__```: Selbe Funktion wie ```add_function```
         
         
-        ```__isub```: Selbe Funktion wie ```remove_function```
+        ```__isub__```: Selbe Funktion wie ```remove_function```
         
         
         ```__call__```: Selbe Funktion wie ```emit```

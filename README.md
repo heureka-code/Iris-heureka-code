@@ -17,7 +17,7 @@
 ```__iadd__```: Selbe Funktion wie ```add_function```
 
 
-```__isub```: Selbe Funktion wie ```remove_function```
+```__isub__```: Selbe Funktion wie ```remove_function```
 
 
 ```__call__```: Selbe Funktion wie ```emit```
