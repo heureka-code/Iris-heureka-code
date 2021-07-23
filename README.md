@@ -1,4 +1,4 @@
-# Iris - Verwaltung von Events
+# Iris – Verwaltung von Events
 
 ## Event
 
@@ -60,3 +60,43 @@ Möglichkeiten ein Event von seinem Namen her zu erhalten:
 
 * ```__getitem__```
 * ```__getattr__```
+
+
+## StaticHandler
+
+Basisklasse, von der verschiedene Handler abgeleitet werden können, deren Attribute als Events aufgefasst werden.
+
+### Syntax mit Typvorgabe:
+
+```python
+class Irgendwas(StaticHandler):
+    EVENT_1: Event
+    EVENT_2: Event
+```
+
+### Syntax mit None-Wert
+
+```python
+class Irgendwas(StaticHandler):
+    EVENT_1 = None
+    EVENT_2 = None
+```
+
+### Syntax mit Typ und None
+
+```python
+class Irgendwas(StaticHandler):
+    EVENT_1: Event = None
+    EVENT_2: EVENT = None
+```
+
+Statt ```None``` kann auch ```Event()``` verwendet werden. 
+Das macht allerdings keinen Unterschied.
+
+### Auslösen eines Events
+
+```python
+handler = Irgendwas()
+handler.EVENT_1.add_function(print)
+handler.EVENT_1.emit("Test")
+```
