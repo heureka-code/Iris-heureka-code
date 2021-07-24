@@ -100,3 +100,37 @@ handler = Irgendwas()
 handler.EVENT_1.add_function(print)
 handler.EVENT_1.emit("Test")
 ```
+
+## RecursiveHandler
+
+Ein Dekorator, um eine Klasse dem Aufnehmen eines weiteren Handlers zu befähigen.
+
+### Exceptions
+
+Ein Auftreten der Exception ```AttributeError``` kann bedeuten, dass der Dekorator vergessen worden ist. 
+
+### Syntax
+
+```python
+@RecursiveHandler
+class A(StaticHandler):
+    a1: Event
+
+    @RecursiveHandler
+    class B(StaticHandler):
+        b1: Event
+        
+        class C(StaticHandler):
+            c1: Event
+```
+
+### Event erreichen
+
+```python
+a = A()
+print(a.a1)
+print(a.B.b1)
+print(a.B.C.c1)
+```
+
+Die definierten Events können so angesprochen werden.

@@ -6,13 +6,16 @@ from inspect import getmembers
 
 
 class StaticHandler:
-    def __init__(self):
+    def __init__(self, event_names: list[str] = None):
         """
         Oberklasse von der abgeleitet werden kann.
         Die Attribute der Unterklassen werden zu Events.
         Näheres zur Notation in der Dokumentation.
         """
+        if event_names is not None:
+            self.__add_attribute(event_names)
         self.__add_attrs_for_instance()
+
         pass
 
     def __add_attrs_for_instance(self):
@@ -31,7 +34,7 @@ class StaticHandler:
                 self.__add_attribute(attr)
             return None
 
-        object.__setattr__(self, attrs, Event())
+        object.__setattr__(self, str(attrs), Event())
         pass
 
     def __setattr__(self, key, value):
@@ -39,4 +42,5 @@ class StaticHandler:
 
     def __delattr__(self, item):
         return None
+
     pass
