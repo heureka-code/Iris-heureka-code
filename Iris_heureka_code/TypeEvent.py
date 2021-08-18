@@ -27,7 +27,11 @@ class TypeEvent(Event):
         """
         geg_typen = [type(arg) for arg in args]
         if not all([t1 == t2 for t1, t2 in zip(geg_typen, self.typen)]):
-            raise TypeError(f"Die Argumente {args} haben die falschen Typen ({geg_typen}). Die richtigen sind {self.typen}")
+            raise TypeError(
+                f"Die Argumente {args} haben die falschen Typen ({geg_typen}). Die richtigen sind {self.typen}")
+        if len(geg_typen) != len(self.typen):
+            raise AttributeError(f"Ungueltige Anzahl an Argumenten. "
+                                 f"Gegeben sind {len(geg_typen)} aber {len(self.typen)} werden benoetigt.")
         return Event.emit(self, *args)
 
     @property
