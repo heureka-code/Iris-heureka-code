@@ -1,4 +1,5 @@
 from .Event import Event
+from .TypeEvent import TypeEvent
 from .Handler import Handler
 from .StaticHandler import StaticHandler
 from .RecursiveHandler import RecursiveHandler

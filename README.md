@@ -29,6 +29,19 @@
 ```function```: Property-Attribut, das die Liste der gebundenen Funktionen liefert zur einfachen Manipulation.
 
 
+## TypeEvent
+
+```__init__```: Konstruktor, der die Typen nimmt, die akzeptiert werden können.
+
+```emit```: Löst das Event aus. Wirft TypeError, falls falsche Typen vorliegen oder AttributeError.
+
+```typen```: Property-Attribut, das die akzeptablen Typen liefert.
+
+```__repr__```: Representationsstring des TypeEvents mit den Typen und den gebundenen Funktionen.
+
+```__copy__```: Liefert eine Kopie des Objekts allerdings mit leerer Funktionspointerliste.
+
+
 ## Handler
 
 ```__init__```: Konstruktor, der den Handler initialisiert.
@@ -92,6 +105,16 @@ class Irgendwas(StaticHandler):
 
 Statt ```None``` kann auch ```Event()``` verwendet werden. 
 Das macht allerdings keinen Unterschied.
+
+
+### Syntax mit TypeEvent
+
+```python
+class IgendwasMitTypen(StaticHandler):
+    T_EVENT_1 = TypeEvent(int, str, int)
+    T_EVENT_2 = TypeEvent(str, int)
+```
+
 
 ### Auslösen eines Events
 
