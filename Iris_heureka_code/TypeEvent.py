@@ -1,4 +1,7 @@
-from .Event import Event
+try:
+    from .Event import Event
+except ImportError:
+    from Event import Event
 
 
 class TypeEvent(Event):
@@ -31,4 +34,10 @@ class TypeEvent(Event):
     def typen(self) -> list[type]:
         """ Die Typen, die fuer das Event gueltig sind. """
         return self.__typen
+
+    def __repr__(self):
+        return f"<TypeEvent {self.typen} {self.functions}>"
+
+    def __copy__(self):
+        return TypeEvent(*self.typen)
     pass
