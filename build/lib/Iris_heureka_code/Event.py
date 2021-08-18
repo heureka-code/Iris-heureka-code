@@ -42,15 +42,15 @@ class Event:
         """
         Löst das Event aus und ruft alle gebundenen Funktionen mit den dieser Funktion gegebenen Argumenten auf.
 
-        :raise TypeError: Wenn ungültige Argumente für eine der gebundenen Funktionen existieren
+        :raise AttributeError: Wenn ungültige Argumente für eine der gebundenen Funktionen existieren
         :param args: Die Argumente für die gebundenen Funktionen
         :return: None
         """
         for f in self.__functions:
             try:
                 f(*args)
-            except TypeError as e:
-                raise TypeError(f"Die Funktion {str(f)} nimmt die Argumente {str(args)} nicht") from e
+            except AttributeError as e:
+                raise AttributeError(f"Die Funktion {str(f)} nimmt die Argumente {str(args)} nicht") from e
         pass
 
     @property
@@ -70,5 +70,5 @@ class Event:
         self.emit(*args)
 
     def __repr__(self):
-        return f"<Event targets={str(self.functions)}>"
+        return f"<{self.__class__.__name__} targets={str(self.functions)}>"
     pass

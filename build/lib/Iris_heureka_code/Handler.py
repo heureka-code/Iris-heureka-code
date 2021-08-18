@@ -6,7 +6,7 @@ except ImportError:
 
 class Handler:
     def __init__(self):
-        """ Handler für die Verwaltung von Events. """
+        """ Handler für die Verwaltung von Events. Nur fuer die Klasse "Event" funktionsfaehig."""
         self.__events = {}
         pass
 

@@ -1,11 +1,11 @@
 Metadata-Version: 2.1
 Name: Iris-heureka-code
-Version: 1.1.1
+Version: 1.2.0
 Summary: Eventbasierte Kommunikation
 Home-page: https://github.com/heureka-code/Iris-heureka-code
 Author: heureka-code
 License: MIT
-Download-URL: https://github.com/heureka-code/Iris-heureka-code/archive/refs/tags/1.1.1.tar.gz
+Download-URL: https://github.com/heureka-code/Iris-heureka-code/archive/refs/tags/1.2.0.tar.gz
 Platform: UNKNOWN
 Description-Content-Type: text/markdown
 License-File: LICENSE.txt
@@ -39,6 +39,19 @@ License-File: LICENSE.txt
 
 
 ```function```: Property-Attribut, das die Liste der gebundenen Funktionen liefert zur einfachen Manipulation.
+
+
+## TypeEvent
+
+```__init__```: Konstruktor, der die Typen nimmt, die akzeptiert werden können.
+
+```emit```: Löst das Event aus. Wirft TypeError, falls falsche Typen vorliegen oder AttributeError.
+
+```typen```: Property-Attribut, das die akzeptablen Typen liefert.
+
+```__repr__```: Representationsstring des TypeEvents mit den Typen und den gebundenen Funktionen.
+
+```__copy__```: Liefert eine Kopie des Objekts allerdings mit leerer Funktionspointerliste.
 
 
 ## Handler
@@ -104,6 +117,16 @@ class Irgendwas(StaticHandler):
 
 Statt ```None``` kann auch ```Event()``` verwendet werden. 
 Das macht allerdings keinen Unterschied.
+
+
+### Syntax mit TypeEvent
+
+```python
+class IgendwasMitTypen(StaticHandler):
+    T_EVENT_1 = TypeEvent(int, str, int)
+    T_EVENT_2 = TypeEvent(str, int)
+```
+
 
 ### Auslösen eines Events
 
